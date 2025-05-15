@@ -1,0 +1,24 @@
+Starting up an .Net Core Web API Controller project
+
+1.Ensure you have all dependency for .Net core installed
+	Open Command line and type dontnet --info, if you see installation information you are set if not download it from Microsoft website.
+
+2. while in the main project folder not the API folder yet,Create the solution container to hold the .Net Project
+	type "dotnet new sln" in the terminal
+
+3. Now create the API project, this command will create/name the project folder and set up the structure based on the command passed
+	type "dotnet new webapi -controllers -n API
+
+	-controllers is the type of structure the .NET CLI will generate
+	-n is the name the CLI will give the folder
+
+4. Add the project to the dotnet solution
+	type "dotnet sln add API" API will be whatever name you chose to use but for best practice I hope you just named it API...
+
+	Troubleshooting:
+	
+	if the server dont trust the default certs when running the api server run this command in the terminal
+		type "dotnet dev-certs https --trust"
+		
+	if that dont work change trust to clean and try this.
+		type "dotnet dev-certs https --clean"
